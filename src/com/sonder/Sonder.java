@@ -18,13 +18,19 @@ import javafx.stage.Stage;
  */
 public class Sonder extends Application {
 
+    public static int GRID_WIDTH, GRID_HEIGHT = 40;
+
+    private Cell[GRID_WIDTH][GRID_HEIGHT] cells;
+
     public static void main(String[] args) {
         launch(args);
     }
 
     @Override
     public void start(Stage primaryStage) {
-        primaryStage.setTitle("Hello World!");
+        primaryStage.setTitle("Sonder (Game Of Life)");
+
+        cells = new Cell[GRID_WIDTH][GRID_HEIGHT];
 
         Group root = new Group();
         Scene s = new Scene(root, 600, 600, Color.BLACK);
@@ -33,6 +39,7 @@ public class Sonder extends Application {
         GraphicsContext gc = canvas.getGraphicsContext2D();
 
         gc.setFill(Color.WHITE);
+
         for (int i = 0; i < 20; i++) {
             for (int j = 0; j < 20; j++) {
                 gc.fillRect(i * 20, i * 20, 18, 18);

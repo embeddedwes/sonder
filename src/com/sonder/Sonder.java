@@ -32,21 +32,24 @@ public class Sonder extends Application {
 
         cells = new Cell[GRID_WIDTH][GRID_HEIGHT];
 
-        Group root = new Group();
+        StackPane root = new StackPane();
         Scene s = new Scene(root, 600, 600, Color.BLACK);
 
-        final Canvas canvas = new Canvas(600, 600);
+        final Canvas canvas = new ResizableCanvas();
         GraphicsContext gc = canvas.getGraphicsContext2D();
 
         gc.setFill(Color.WHITE);
 
-        for (int i = 0; i < 20; i++) {
-            for (int j = 0; j < 20; j++) {
+        for (int i = 0; i < GRID_WIDTH; i++) {
+            for (int j = 0; j < GRID_HEIGHT; j++) {
                 gc.fillRect(i * 20, i * 20, 18, 18);
             }
         }
 
         root.getChildren().add(canvas);
+
+        canvas.widthProperty().bind(root.widthProperty());
+        canvas.heightProperty().bind(root.heightProperty());
 
         primaryStage.setScene(s);
         primaryStage.show();

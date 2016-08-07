@@ -32,9 +32,9 @@ public class ResizableCanvas extends Canvas {
         gc.strokeLine(0, height, width, 0);
 
        */
-        for (int i = 0; i < 40; i++) {
-            for (int j = 0; j < 40; j++) {
-                gc.fillRect(i * Cell.SIZE, i * Cell.SIZE, Cell.SIZE - CELL_SPACING, Cell.SIZE - CELL_SPACING);
+        for (int i = 0; i < 30; i++) {
+            for (int j = 0; j < 30; j++) {
+                gc.fillRect(i * Cell.SIZE, j * Cell.SIZE, Cell.SIZE - CELL_SPACING, Cell.SIZE - CELL_SPACING);
             }
         }
     }

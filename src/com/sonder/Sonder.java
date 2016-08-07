@@ -18,9 +18,9 @@ import javafx.stage.Stage;
  */
 public class Sonder extends Application {
 
-    public static int GRID_WIDTH, GRID_HEIGHT = 40;
+    private static int GRID_WIDTH, GRID_HEIGHT = 40;
 
-    private Cell[GRID_WIDTH][GRID_HEIGHT] cells;
+    private Cell[][] cells;
 
     public static void main(String[] args) {
         launch(args);

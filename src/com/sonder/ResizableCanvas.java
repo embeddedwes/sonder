@@ -10,6 +10,8 @@ import javafx.scene.paint.Color;
 
 public class ResizableCanvas extends Canvas {
 
+    private static final int CELL_SPACING = 1;
+
     public ResizableCanvas() {
         // Redraw canvas when size changes.
         widthProperty().addListener(evt -> draw());
@@ -24,12 +26,15 @@ public class ResizableCanvas extends Canvas {
         gc.clearRect(0, 0, width, height);
 
         gc.setFill(Color.WHITE);
-        /*gc.strokeLine(0, 0, width, height);
-        gc.strokeLine(0, height, width, 0);*/
 
+        /* gc.setStroke(Color.RED);
+        gc.strokeLine(0, 0, width, height);
+        gc.strokeLine(0, height, width, 0);
+
+       */
         for (int i = 0; i < 40; i++) {
             for (int j = 0; j < 40; j++) {
-                gc.fillRect(i * 20, i * 20, 18, 18);
+                gc.fillRect(i * Cell.SIZE, i * Cell.SIZE, Cell.SIZE - CELL_SPACING, Cell.SIZE - CELL_SPACING);
             }
         }
     }

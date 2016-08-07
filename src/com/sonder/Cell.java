@@ -6,5 +6,7 @@ package com.sonder;
 
 public class Cell {
 
+    public static final int SIZE = 20;
+
     public boolean isAlive;
 }

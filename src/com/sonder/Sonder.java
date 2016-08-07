@@ -3,9 +3,14 @@ package com.sonder;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 /**
@@ -20,19 +25,19 @@ public class Sonder extends Application {
     @Override
     public void start(Stage primaryStage) {
         primaryStage.setTitle("Hello World!");
-        Button btn = new Button();
-        btn.setText("Say 'Hello World'");
-        btn.setOnAction(new EventHandler<ActionEvent>() {
 
-            @Override
-            public void handle(ActionEvent event) {
-                System.out.println("Hello World!");
-            }
-        });
+        Group root = new Group();
+        Scene s = new Scene(root, 300, 300, Color.BLACK);
 
-        StackPane root = new StackPane();
-        root.getChildren().add(btn);
-        primaryStage.setScene(new Scene(root, 300, 250));
+        final Canvas canvas = new Canvas(250,250);
+        GraphicsContext gc = canvas.getGraphicsContext2D();
+
+        gc.setFill(Color.BLUE);
+        gc.fillRect(75,75,100,100);
+
+        root.getChildren().add(canvas);
+        
+        primaryStage.setScene(s);
         primaryStage.show();
     }
 }

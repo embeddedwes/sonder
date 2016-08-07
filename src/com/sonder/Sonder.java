@@ -27,18 +27,15 @@ public class Sonder extends Application {
         primaryStage.setTitle("Hello World!");
 
         Group root = new Group();
-        Scene s = new Scene(root, 300, 300, Color.BLACK);
+        Scene s = new Scene(root, 600, 600, Color.BLACK);
 
-        final Canvas canvas = new Canvas(250,250);
+        final Canvas canvas = new Canvas(600, 600);
         GraphicsContext gc = canvas.getGraphicsContext2D();
-
-        //gc.setFill(Color.BLUE);
-        //gc.fillRect(75,75,100,100);
 
         gc.setFill(Color.WHITE);
         for (int i = 0; i < 20; i++) {
             for (int j = 0; j < 20; j++) {
-                gc.fillRect(i * 20 + 1, i * 20 + 1, 18, 18);
+                gc.fillRect(i * 20, i * 20, 18, 18);
             }
         }
 

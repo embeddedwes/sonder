@@ -18,7 +18,7 @@ import javafx.stage.Stage;
  */
 public class Sonder extends Application {
 
-    private static int GRID_WIDTH, GRID_HEIGHT = 40;
+    private static int GRID_WIDTH, GRID_HEIGHT = 30;
 
     private Cell[][] cells;
 
@@ -47,7 +47,13 @@ public class Sonder extends Application {
         primaryStage.show();
 
         while(true) {
-
+            for (int i = 0; i < GRID_WIDTH; i++) {
+                for (int j = 0; j < GRID_HEIGHT; j++) {
+                    //gc.fillRect(i * Cell.SIZE, j * Cell.SIZE, Cell.SIZE - ResizableCanvas.CELL_SPACING, Cell.SIZE - ResizableCanvas.CELL_SPACING);
+                    cells[i][j].update(cells, i, j);
+                    cells[i][j].draw(gc);
+                }
+            }
 
             try {
                 Thread.sleep(1);

@@ -10,7 +10,7 @@ import javafx.scene.paint.Color;
 
 public class ResizableCanvas extends Canvas {
 
-    private static final int CELL_SPACING = 1;
+    public static final int CELL_SPACING = 1;
 
     public ResizableCanvas() {
         // Redraw canvas when size changes.
@@ -32,11 +32,7 @@ public class ResizableCanvas extends Canvas {
         gc.strokeLine(0, height, width, 0);
 
        */
-        for (int i = 0; i < 30; i++) {
-            for (int j = 0; j < 30; j++) {
-                gc.fillRect(i * Cell.SIZE, j * Cell.SIZE, Cell.SIZE - CELL_SPACING, Cell.SIZE - CELL_SPACING);
-            }
-        }
+
     }
 
     @Override

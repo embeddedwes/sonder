@@ -18,8 +18,8 @@ public class Cell {
 
     }
 
-    public void update(ArrayList<Cell> listOfCells) {
-
+    public void update(Cell[][] listOfCells, int gridX, int gridY) {
+        
     }
 
 }

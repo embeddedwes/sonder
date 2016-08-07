@@ -38,14 +38,6 @@ public class Sonder extends Application {
         final Canvas canvas = new ResizableCanvas();
         GraphicsContext gc = canvas.getGraphicsContext2D();
 
-        gc.setFill(Color.WHITE);
-
-        for (int i = 0; i < GRID_WIDTH; i++) {
-            for (int j = 0; j < GRID_HEIGHT; j++) {
-                gc.fillRect(i * 20, i * 20, 18, 18);
-            }
-        }
-
         root.getChildren().add(canvas);
 
         canvas.widthProperty().bind(root.widthProperty());
@@ -53,5 +45,15 @@ public class Sonder extends Application {
 
         primaryStage.setScene(s);
         primaryStage.show();
+
+        while(true) {
+
+
+            try {
+                Thread.sleep(1);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }

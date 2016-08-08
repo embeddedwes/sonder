@@ -36,15 +36,24 @@ public class Sonder extends Application {
         primaryStage.show();
 
         Grid grid = new Grid();
+        Grid nextGrid = new Grid();
 
         new AnimationTimer()
         {
+            int i = 0;
+
             public void handle(long currentNanoTime)
             {
-                gc.setFill(Color.WHITE);
-                gc.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
-                grid.update();
-                grid.draw(gc);
+                i++;
+
+                if(i % 60 == 0) {
+                    gc.setFill(Color.WHITE);
+                    gc.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
+                    //nextGrid.update(grid);
+                    //grid.cells = nextGrid.cells;
+                    grid.update();
+                    grid.draw(gc);
+                }
             }
         }.start();
     }
